@@ -1,0 +1,258 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="demo-page">
+    <text class="title">欢迎打开</text>
+  </div>
+</template>
+
+<script>
+import my from '../onekit/my.js'
+import geolocation from '@system.geolocation'
+export default {
+  onInit() {
+    //   my.choosePhoneContact({
+    //   success: (res) => {
+    //     my.alert({
+    //       content: 'chooseContact : ' + JSON.stringify(res)
+    //     });
+    //   },
+    //   fail: (res) => {
+    //     my.alert({
+    //       content: 'chooseContact : ' + JSON.stringify(res)
+    //     });
+    //   },
+    // });
+    // my.getLocation({
+    //   success(res) {
+    //     console.log(res)
+    //   },
+    //   fail(res) {
+    //     console.log(res)
+    //   },
+    //   complete(res) {
+    //     console.log(res)
+    //   },
+    // })
+    // my.chooseLocation({
+    //    success: function (res) {
+    //     console.log("chooseLocation success", arguments)
+    //   },
+    //   fail: function (res) {
+    //     console.log("chooseLocation fail", res)
+    //   },
+    //   complete: function (res) {
+    //     console.log("chooseLocation complete", res)
+    //   },
+    // })
+
+    // my.saveImage({
+    //   url: 'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
+    //   success: function (res) {
+    //     console.log("saveImage success", arguments)
+    //   },
+    //   fail: function (res) {
+    //     console.log("saveImage fail", res)
+    //   },
+    //   complete: function (res) {
+    //     console.log("saveImage complete", res)
+    //   },
+    // });
+    //  my.previewImage({
+    //   current: 2,
+    //   urls: [
+    //     'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+    //     'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
+    //     'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
+    //   ],
+    // });
+    // my.getImageInfo({
+    //   src:'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+    //   success:function(res){
+    //     console.log("getImageInfo success",res)
+    //   },
+    //   fail: function (res) {
+    //     console.log("getImageInfo fail", res)
+    //   },
+    //   complete: function (res) {
+    //     console.log("getImageInfo complete", res)
+    //   },
+    // })
+
+
+
+    //my.clearStorage();
+    // my.getStorage({
+    //   key: 'currentCity',
+    //   success: function (res) {
+    //     console.log("getStorage success", res)
+    //   },
+    //   fail: function (res) {
+    //     console.log("getStorage fail", res)
+    //   },
+    //   complete: function (res) {
+    //     console.log("getStorage complete", res)
+    //   },
+    // });
+    // my.setStorage({
+    //   key: 'currentCity',
+    //   data: "v1",
+    //   success: function () {
+    //     console.log("setStorage 写入成功")
+    //   }
+    // });
+    // my.getStorageInfo({
+    //   success: function (res) {
+    //     console.log("getStorageInfo success", res)
+    //   },
+    //   fail: function (res) {
+    //     console.log("getStorageInfo fail", res)
+    //   },
+    //   complete: function (res) {
+    //     console.log("getStorageInfo complete", res)
+    //   },
+    // })
+    // my.request({
+    // 	url: 'https://locally.uieee.com/slides',
+    // 	// url: 'http://192.168.22.150/Text/index.jsp',
+    // 	success(res) {
+    // 		console.log('request success', res)
+    // 	},
+    // 	fail(res) {
+    // 		console.log('request fail', res)
+    // 	},
+    // 	complete(res) {
+    // 		console.log('request complete', res)
+    // 	},
+    // })
+    // my.getBatteryInfo({
+    //   success: (res) => {
+    //     my.alert({ content: '系统信息：' + JSON.stringify(res), });
+    //     console.log({ content: '系统信息：' + JSON.stringify(res), });
+    //   },
+    //   fail: (error) => {
+    //     my.alert({ content: '获取失败' + JSON.stringify(error), });
+    //   },
+    //   complete: () => {
+    //     my.alert({ title: 'complete回调', });
+    //   },
+    // })
+    //  my.scan({
+    // 		success(res) {
+    // 			console.log("scan success", res)
+    // 		},
+    // 		fail(res) {
+    // 			console.log("scan fail", res)
+    // 		},
+    // 		complete(res) {
+    // 			console.log("scan complete", res)
+    // 		}
+    // 	})
+    // my.setScreenBrightness({
+    // 		value: 0.5,
+    // 		success(res) {
+    // 			console.log("getNetworkType success", res)
+    // 		},
+    // 		fail(res) {
+    // 			console.log("getNetworkType fail", res)
+    // 		},
+    // 		complete(res) {
+    // 			console.log("getNetworkType complete", res)
+    // 		}
+    // 	})
+
+    // 	my.getScreenBrightness({
+    // 		success(res) {
+    // 			console.log("getValue success", res)
+    // 		},
+    // 		fail(res) {
+    // 			console.log("getValue fail", res)
+    // 		},
+    // 		complete(res) {
+    // 			console.log("getValue complete", res)
+    // 		}
+    // 	})
+
+    // 	my.setKeepScreenOn({
+    // 		keepScreenOn: true,
+    // 		success(res) {
+    // 			console.log("setKeepScreenOn success", res)
+    // 		},
+    // 		fail(res) {
+    // 			console.log("setKeepScreenOn fail", res)
+    // 		},
+    // 		complete(res) {
+    // 			console.log("setKeepScreenOn complete", res)
+    // 		}
+    // 	})
+    // my.onCompassChange(function (res) {
+    //   console.log(res);
+    // })
+    // my.onAccelerometerChange(function (res) {
+    //   console.log(res);
+    // })
+
+    //////////////
+    // my.vibrateShort({
+    //   success(res) {
+    //     console.log("vibrateLong success", res);
+    //   },
+    //   fail(res) {
+    //     console.log("vibrateLong fail", res)
+    //   },
+    //   complete(res) {
+    //     console.log("vibrateLong complete", res)
+    //   }
+    // })
+
+    //  my.setClipboard({
+    //   text: 'SSSSSSSSSSSSSSSS',
+    //   success(res) {
+    //     console.log("setClipboard",res)
+    //   }
+    // })
+    // my.getClipboard({
+    //   success(res) {
+    //     console.log("getClipboard",res) // data
+    //   }
+    // })
+
+    // my.getNetworkType({
+    //   success(res) {
+    //     console.log("getNetworkType success", arguments)
+    //   },
+    //   fail(res) {
+    //     console.log("getNetworkType fail", arguments)
+    //   },
+    //   complete(res) {
+    //     console.log("getNetworkType complete", arguments)
+    //   }
+    // })
+    // my.onNetworkStatusChange(function (res) {
+    //   console.log(JSON.stringify(res))
+    // })
+    // my.getSystemInfo({
+    //    success(res) {
+    //     console.log("getSystemInfo success", arguments)
+    //   },
+    //   fail(res) {
+    //     console.log("getSystemInfo fail", arguments)
+    //   },
+    //   complete(res) {
+    //     console.log("getSystemInfo complete", arguments)
+    //   }
+    // })
+    // my.chooseImage({
+    //   success(res) {
+    //     console.log("chooseImage success", res)
+    //   },
+    //   fail(res) {
+    //     console.log("chooseImage fail", res)
+    //   },
+    //   complete(res) {
+    //     console.log("chooseImage complete", res)
+    //   }
+    // })
+  },
+
+}
+</script>
